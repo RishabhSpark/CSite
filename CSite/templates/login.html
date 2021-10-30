@@ -1,0 +1,106 @@
+{% if msg %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search YouTube</title>
+
+    <link rel = "stylesheet" type ="text/css" href = "{% static 'login.css' %}">
+    <link rel = "stylesheet" type ="text/css" href = "{% static 'overall.css' %}">
+    <style>
+
+    </style>
+    </head>
+
+    <body>
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+
+    <div class="container">
+        <!-- Nav -->
+        <nav class="main-nav">
+        <img src="{% static 'CSiTE_idk.png' %}" alt="CSite" class="logo">
+
+        <ul class="main-menu">
+          <a href = '/'><li>Home</li></a>
+          <a href = 'discover.html'><li>Discover</li></a>
+          <a href = 'about us.html'><li>About Us</li></a>
+        </ul>
+
+        <ul class="right-menu">
+            <li class = "search_icon">
+
+            <li>
+            <a href='#'><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login/Register</a>
+            </a>
+            </li>
+        </ul>
+        </nav>
+        <hr>
+        </nav>
+        <div id='login-form' class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                    <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                </div>
+                <form action="/postsign/" method="post" id='login' class='input-group-login' >
+                    {% csrf_token %}
+                    <input type='email'class='input-field' name="email" placeholder='Email Id' required >
+                <input type='password'class='input-field' name="pass" placeholder='Enter Password' required>
+                <button type='submit'class='submit-btn' value="SignIn">Log in</button>
+		        </form>
+                <form action="/postreg/" method="post" id='register' class='input-group-register'>
+                    {% csrf_token %}
+                    <input type='text'class='input-field' name="n1" placeholder='First Name' required>
+                    <input type='text'class='input-field' name="n2" placeholder='Last Name ' required>
+                    <input type='email'class='input-field' name="email1" placeholder='Email Id' required>
+                    <input type='password'class='input-field' name="pass1" placeholder='Enter Password' required>
+                    <input type='password'class='input-field' name="pass2" placeholder='Confirm Password'  required>
+                    <button type='submit'class='submit-btn'>Register</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+
+        </div>
+
+        <hr>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-inner">
+            <ul>
+                <li>
+                    <li><a href="#">Email Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">&copy; CSite</a></li>
+            </ul>
+            </div>
+        </footer>
+    </body>
+</html>

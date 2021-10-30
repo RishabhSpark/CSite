@@ -1,0 +1,33 @@
+body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+  .image-section-left{
+    float: left;
+    margin-right: 20px;
+}
+
+.image-section-right{
+    float: right;
+    margin-left: 20px;
+}
+
+.about-us-content a {
+    display: inline-block;
+    padding-top: 10px;
+    color: #0067b8;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.about-us-content a:hover i {
+    margin-left: 10px;
+}
