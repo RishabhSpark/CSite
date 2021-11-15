@@ -7,6 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 import pyrebase
+x="Login/Register"
 config={
   "apiKey": "AIzaSyBogsww2UQLHaGZ1_4kDJCduj4nN1Pcx2o",
   "authDomain": "fir-tutorial-19f11.firebaseapp.com",
@@ -34,12 +35,13 @@ def firebase_login_save(request):
     print(username,email,provider,token)
     return HttpResponse("OK")
 def home(request):
-    return render(request,"home.html",{"x":"Login/Register"})
+    return render(request,"home.html",{"x":x})
 def login(request):
     return render(request,"login.html")
 def login_firebase(request):
     return render(request,"login_firebase.html")
 def postsign(request):
+    global x
     email=request.POST.get('email')
     passw=request.POST.get('pass')
     try:
@@ -51,10 +53,11 @@ def postsign(request):
     session_id=user['localId']
     request.session['uid']=str(session_id)
     users = dict(db.child("users").get().val())
-    return render(request,"home.html",{"x":users[session_id]['details']['name']})
+    x=users[session_id]['details']['name']
+    return render(request,"home.html",{"x":x})
 def logout(request):
     auth.logout(request)
-    return request(request,'home.html',{'x':"Login/Register"})
+    return request(request,'home.html',{'x':x})
 def postreg(request):
     name=request.POST.get('n1')+" "+request.POST.get('n2')
     email=request.POST.get('email1')
@@ -72,3 +75,7 @@ def postreg(request):
     data={"name":name,"courses":0}
     db.child('users').child(uid).child("details").set(data)
     return render(request,"login.html")
+def discover(request):
+    return render(request,"discover.html",{'x':x})
+def about_us(request):
+    return render(request,"about us.html",{'x':x})

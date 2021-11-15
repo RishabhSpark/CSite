@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
         <title>TheCSite</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel = "stylesheet" type ="text/css" href = "overall.css">
-        <link rel = "stylesheet" type ="text/css" href = "search.css">
-        <link rel = "stylesheet" type ="text/css" href = "snow.css">
+        <link rel = "stylesheet" type ="text/css" href = "{% static 'overall.css' %}">
+        <link rel = "stylesheet" type ="text/css" href = "{% static 'search.css' %}">
+        <link rel = "stylesheet" type ="text/css" href = "{% static 'about_us.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel = "stylesheet" type = "text/css" href = "discover.css">
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'style.css' %}">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
@@ -18,12 +21,12 @@
 
     <div class="container">
         <nav class="main-nav">
-        <img src="CSiTE_idk.png" alt="Google" class="logo">
+        <img src="{% static 'CSiTE_idk.png' %}" alt="Google" class="logo">
 
         <ul class="main-menu">
-          <a href = 'home.html'><li>Home</li></a>
-          <a href = '#'><li>Discover</li></a>
-          <a href = 'about us.html'><li>About Us</li></a>
+          <a href = '/'><li>Home</li></a>
+          <a href = '/discover'><li>Discover</li></a>
+          <a href = '/about_us'><li>About Us</li></a>
         </ul>
 
         <ul class="right-menu">
@@ -34,33 +37,166 @@
                 <i class="fa fa-search"></i>
             </form>
             <ul>
-            <a href='login.html'>Login/Register</a>
+            <a href='/login/#'>{{x}}</a>
             </a>
             </ul>
         </ul>
         </nav>
         <hr>
         <br>
-
-        <header class="box">
-            <div class="search-heading">Search for the best course you want here!</div>
-            <div class="searchbar" style="position: relative;">
-                <div id="sb-search" class="sb-search"></div>
-            <form action="">
-                <input type="search" placeholder="Search here ...">
-                <i class="fa fa-search"></i>
-            </form>
-        </header>
-
-        <hr>
-        <footer class="footer">
-            <div class="footer-inner">
-            <ul>
-                <li><a href="#">Email Us</a></li>
-                <li><a href="https://www.linkedin.com/in/the-csite-07b480222/">Linkedin</a></li>
-                <li><a href="#">&copy; CSite</a></li>
-            </ul>
+<ul>
+        <div class="about-us-content">
+            <div>
+                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
+                class = "image-section-left" />
+                <h2>COURSE TITLE HERE</h2>
+                <p>
+                    Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#">Link <i class="fas fa-chevron-right"></i></a>
             </div>
-        </footer>
+            <br>
+            <br>
+            <div>
+                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
+                class = "image-section-left" />
+                <h2>COURSE TITLE HERE</h2>
+                <p>
+                    Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <div>
+                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
+                class = "image-section-left" />
+                <h2>COURSE TITLE HERE</h2>
+                <p>
+                    Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <div>
+                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
+                class = "image-section-left" />
+                <h2>COURSE TITLE HERE</h2>
+                <p>
+                    Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <div>
+                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
+                class = "image-section-left" />
+                <h2>COURSE TITLE HERE</h2>
+                <p>
+                    Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <div>
+                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
+                class = "image-section-left" />
+                <h2>COURSE TITLE HERE</h2>
+                <p>
+                    Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            </div>
+
+        <div class="sidebar close">
+            <div class="logo-details">
+                <i class='bx bx-menu' ></i>
+            <span class="logo_name">CSite</span>
+            </div>
+            <ul class="nav-links">
+            <li>
+                <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bxl-python'></i>
+                    <span class="link_name">Python</span>
+                </a>
+                </div>
+            </li>
+            <li>
+                <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bxl-c-plus-plus'></i>
+                    <span class="link_name">C++</span>
+                </a>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+
+                <i class="fab fa-cuttlefish"></i>
+                <span class="link_name">C</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <i class="fab fa-java"></i>
+                <span class="link_name">Java</span>
+                </a>
+            </li>
+            <li>
+                <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bxl-javascript'></i>
+                    <span class="link_name">Javascript</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <i class='bx bxl-html5'></i>
+                <span class="link_name">HTML</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <i class='bx bxl-css3' ></i>
+                <span class="link_name">CSS</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <i class='bx bxs-data'></i>
+                <span class="link_name">MySQL</span>
+            </li>
+            <li>
+        </li>
+        </ul>
+        </div>
+        <section class="home-section">
+            <div class="home-content">
+
+            </div>
+        </section>
+        <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e)=>{
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
+        </script>
+        <hr>
     </body>
 </html>

@@ -26,4 +26,6 @@ urlpatterns = [
     path('postsign/',views.postsign,name='postsign'),
     path('postreg/',views.postreg,name='postreg'),
     path('home/',views.home),
+    path('discover/',views.discover),
+    path('about_us/',views.about_us),
 ]
