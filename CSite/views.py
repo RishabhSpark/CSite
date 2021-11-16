@@ -1,13 +1,21 @@
 import json
 
-
+import pandas as pd
 from django.shortcuts import render
 from django.contrib import auth
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from .models import Courses
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 import pyrebase
 x="Login/Register"
+d = dict()
+for i in range(1, 6):
+    d['I' + str(i + 1)] = ''
+    d['T' + str(i + 1)] = ''
+    d['U' + str(i + 1)] = ''
+    d['D' + str(i + 1)] = ''
+
 config={
   "apiKey": "AIzaSyBogsww2UQLHaGZ1_4kDJCduj4nN1Pcx2o",
   "authDomain": "fir-tutorial-19f11.firebaseapp.com",
@@ -18,6 +26,7 @@ config={
   "measurementId": "G-6DJF6MXXHX",
 "databaseURL":"https://fir-tutorial-19f11-default-rtdb.firebaseio.com/",
 }
+df=pd.read_excel('C:\\Users\\Lenovo\\PycharmProjects\\djangoProject\\CSite\\templates\\Book1.xlsx')
 firebase=pyrebase.initialize_app(config)
 db=firebase.database()
 # data={"user":{"email":"","username":"","Ongoing":"","Completed":""}}
@@ -76,6 +85,27 @@ def postreg(request):
     db.child('users').child(uid).child("details").set(data)
     return render(request,"login.html")
 def discover(request):
+    global d
     return render(request,"discover.html",{'x':x})
+def discover1(request,lang):
+    global df,d
+    m = df.loc[df['Language'] ==lang]
+
+    for i in range(len(m)):
+        d['I'+str(i+1)]=m.iloc[i]['ImageURL']
+        d['T' + str(i + 1)] = m.iloc[i]['Title']
+        d['U' + str(i + 1)] = m.iloc[i]['CourseURL']
+        if(len(m.iloc[i]['Description'])>400):
+            d['D' + str(i + 1)] = m.iloc[i]['Description'][:400]+'...'
+        else:
+            d['D' + str(i + 1)] = m.iloc[i]['Description']
+        print(m.iloc[i]['ImageURL'])
+    for i in range(len(m),6):
+        d['I' + str(i + 1)] = ''
+        d['T' + str(i + 1)] = ''
+        d['U' + str(i + 1)] = ''
+        d['D' + str(i + 1)] = ''
+        d['x']=x
+    return render(request,"discover.html",d)
 def about_us(request):
     return render(request,"about us.html",{'x':x})
