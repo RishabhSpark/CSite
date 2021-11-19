@@ -29,4 +29,7 @@ urlpatterns = [
     path('discover/',views.discover),
     path('discover/<str:lang>/',views.discover1),
     path('about_us/',views.about_us),
+    path('contribute/',views.contribute),
+    path('questions/', views.questions),
+    path('questions/<str:lang>/', views.questions1),
 ]

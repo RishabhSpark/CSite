@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 import pyrebase
 x="Login/Register"
 d = dict()
+d1=dict()
 for i in range(1, 6):
     d['I' + str(i + 1)] = ''
     d['T' + str(i + 1)] = ''
@@ -27,6 +28,7 @@ config={
 "databaseURL":"https://fir-tutorial-19f11-default-rtdb.firebaseio.com/",
 }
 df=pd.read_excel('C:\\Users\\Lenovo\\PycharmProjects\\djangoProject\\CSite\\templates\\Book1.xlsx')
+df1=pd.read_excel('C:\\Users\\Lenovo\\PycharmProjects\\djangoProject\\CSite\\templates\\Book2.xlsx')
 firebase=pyrebase.initialize_app(config)
 db=firebase.database()
 # data={"user":{"email":"","username":"","Ongoing":"","Completed":""}}
@@ -85,7 +87,6 @@ def postreg(request):
     db.child('users').child(uid).child("details").set(data)
     return render(request,"login.html")
 def discover(request):
-    global d
     return discover1(request)
 def discover1(request,lang="Python"):
     global df,d,x
@@ -113,3 +114,31 @@ def discover1(request,lang="Python"):
     return render(request,"discover.html",d)
 def about_us(request):
     return render(request,"about us.html",{'x':x})
+def contribute(request):
+    return render(request,"Contribute.html")
+def questions(request):
+    return questions1(request)
+def questions1(request,tag='Arrays'):
+    global df,d,x
+    m = df.loc[df['tags'] ==tag]
+    d['x'] = x
+    for i in range(len(m)):
+        if(pd.isna(m.iloc[i]['ImageURL'])):
+            d['I' + str(i + 1)] = 'https://media.gcflearnfree.org/content/5e31ca08bc7eff08e4063776_01_29_2020/ProgrammingIllustration.png'
+        else:
+            d['I'+str(i+1)]=m.iloc[i]['ImageURL']
+        d['T' + str(i + 1)] = m.iloc[i]['Title']
+        d['U' + str(i + 1)] = m.iloc[i]['CourseURL']
+        d['V'+str(i+1)]='visible'
+        if(len(m.iloc[i]['Description'])>400):
+            d['D' + str(i + 1)] = m.iloc[i]['Description'][:400]+'...'
+        else:
+            d['D' + str(i + 1)] = m.iloc[i]['Description']
+        print(m.iloc[i]['ImageURL'])
+    for i in range(len(m),6):
+        d['I' + str(i + 1)] = ''
+        d['T' + str(i + 1)] = ''
+        d['U' + str(i + 1)] = ''
+        d['D' + str(i + 1)] = ''
+        d['V' + str(i + 1)] = 'hidden'
+    return render(request,"discover.html",d)

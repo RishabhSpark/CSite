@@ -8,8 +8,8 @@
         <link rel = "stylesheet" type ="text/css" href = "{% static 'overall.css' %}">
         <link rel = "stylesheet" type ="text/css" href = "{% static 'search.css' %}">
         <link rel = "stylesheet" type ="text/css" href = "{% static 'about_us.css' %}">
-        <link rel = "stylesheet" type ="text/css" href = "{% static 'style.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'style.css' %}">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -24,7 +24,7 @@
         <img src="{% static 'CSiTE_idk.png' %}" alt="Google" class="logo">
 
         <ul class="main-menu">
-          <a href = '/home'><li>Home</li></a>
+          <a href = '/'><li>Home</li></a>
           <a href = '/discover'><li>Discover</li></a>
           <a href = '/about_us'><li>About Us</li></a>
         </ul>
@@ -44,66 +44,82 @@
         </nav>
         <hr>
         <br>
-
+<ul>
         <div class="about-us-content">
-            <div>
-                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
+            <div style="visibility: {{ V1 }}">
+                <img src="{{ I1}}" width="260" height="170"
                 class = "image-section-left" />
-                <h2>Siddharth Sharma</h2>
+                <h2>{{ T1}}</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    {{ D1 }}
                 </p>
-                <a href="#">Github <i class="fas fa-chevron-right"></i></a>
+                <a href="{{ U1 }}">Link <i class="fas fa-chevron-right"></i></a>
             </div>
             <br>
             <br>
+            <br>
+            <div style="visibility: {{ V2 }}">
+                <img src="{{ I2}}" width="260" height="170"
+                class = "image-section-left" />
+                <h2>{{ T2}}</h2>
+                <p>
+                    {{ D2 }}
+                </p>
+                <a href="{{ U2 }}">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div style="visibility: {{ V3 }}">
+                <img src="{{ I3}}" width="260" height="170"
+                class = "image-section-left" />
+                <h2>{{ T3}}</h2>
+                <p>
+                    {{ D3 }}
+                </p>
+                <a href="{{ U3 }}">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div style="visibility: {{ V4 }}">
+                <img src="{{ I4}}" width="260" height="170"
+                class = "image-section-left" />
+                <h2>{{ T4}}</h2>
+                <p>
+                    {{ D4 }}
+                </p>
+                <a href="{{ U4 }}">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div style="visibility: {{ V5 }}">
+                <img src="{{ I5}}" width="260" height="170"
+                class = "image-section-left" />
+                <h2>{{ T5}}</h2>
+                <p>
+                    {{ D5 }}
+                </p>
+                <a href="{{ U5 }}">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div style="visibility: {{ V6 }}">
+                <img src="{{ I6}}" width="260" height="170"
+                class = "image-section-left" />
+                <h2>{{ T6}}</h2>
+                <p>
+                    {{ D6 }}
+                </p>
+                <a href="{{ U6 }}">Link <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <br>
+            <br>
+            <br>
+            </div>
 
-            <div>
-                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
-                class = "image-section-right"/>
-                <h2>Shashank Sharma</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <a href="#">Github <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <br>
-            <br>
-            <div>
-                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
-                class = "image-section-left"/>
-                <h2>Harshvardhan Aditya</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <a href="https://github.com/harshvardhan2707">Github <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <br>
-            <br>
-
-            <div>
-                <img src="https://cdn.discordapp.com/attachments/755731933610377237/895211995782082600/unknown.png" width="260" height="170"
-                class = "image-section-right"/>
-                <h2>Rishabh Khandelwal</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <a href="https://github.com/RishabhSpark">Github <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <br>
-            <br>
-        </div>
-
-        <hr>
-        <footer class="footer">
-            <div class="footer-inner">
-            <ul>
-                <li><a href="#">Email Us</a></li>
-                <li><a href="https://www.linkedin.com/in/the-csite-07b480222/">Linkedin</a></li>
-                <li><a href="#">&copy; CSite</a></li>
-            </ul>
-            </div>
-        </footer>
         <div class="sidebar close">
             <div class="logo-details">
                 <i class='bx bx-menu' ></i>
@@ -112,56 +128,56 @@
             <ul class="nav-links">
             <li>
                 <div class="iocn-link">
-                <a href="/discover/Python">
+                <a href="/questions/Arrays">
                     <i class='bx bxl-python'></i>
-                    <span class="link_name">Python</span>
+                    <span class="link_name">Arrays</span>
                 </a>
                 </div>
             </li>
             <li>
                 <div class="iocn-link">
-                <a href="/discover/C++">
+                <a href="/questions/Linked List">
                     <i class='bx bxl-c-plus-plus'></i>
-                    <span class="link_name">C++</span>
+                    <span class="link_name">Linked List</span>
                 </a>
                 </div>
             </li>
             <li>
-                <a href="/discover/C">
+                <a href="/questions/Dynamic Programming">
 
                 <i class="fab fa-cuttlefish"></i>
-                <span class="link_name">C</span>
+                <span class="link_name">Dynamic Programming</span>
                 </a>
             </li>
             <li>
-                <a href="/discover/Java">
+                <a href="/questions/Stack">
                 <i class="fab fa-java"></i>
-                <span class="link_name">Java</span>
+                <span class="link_name">Stack</span>
                 </a>
             </li>
             <li>
                 <div class="iocn-link">
-                <a href="/discover/Javascript">
+                <a href="/questions/Queue">
                     <i class='bx bxl-javascript'></i>
-                    <span class="link_name">Javascript</span>
+                    <span class="link_name">Queue</span>
                 </a>
             </li>
             <li>
-                <a href="/discover/HTML">
+                <a href="/questions/Graphs">
                 <i class='bx bxl-html5'></i>
-                <span class="link_name">HTML</span>
+                <span class="link_name">Graphs</span>
                 </a>
             </li>
             <li>
-                <a href="/discover/CSS">
+                <a href="/questions/Tree">
                 <i class='bx bxl-css3' ></i>
-                <span class="link_name">CSS</span>
+                <span class="link_name">Tree</span>
                 </a>
             </li>
             <li>
-                <a href="/discover/MySQL">
+                <a href="/questions/Recursion">
                 <i class='bx bxs-data'></i>
-                <span class="link_name">MySQL</span>
+                <span class="link_name">Recursion</span>
             </li>
                 <br>
             <br>
