@@ -86,15 +86,19 @@ def postreg(request):
     return render(request,"login.html")
 def discover(request):
     global d
-    return render(request,"discover.html",{'x':x})
-def discover1(request,lang):
-    global df,d
+    return discover1(request)
+def discover1(request,lang="Python"):
+    global df,d,x
     m = df.loc[df['Language'] ==lang]
-
+    d['x'] = x
     for i in range(len(m)):
-        d['I'+str(i+1)]=m.iloc[i]['ImageURL']
+        if(pd.isna(m.iloc[i]['ImageURL'])):
+            d['I' + str(i + 1)] = 'https://media.gcflearnfree.org/content/5e31ca08bc7eff08e4063776_01_29_2020/ProgrammingIllustration.png'
+        else:
+            d['I'+str(i+1)]=m.iloc[i]['ImageURL']
         d['T' + str(i + 1)] = m.iloc[i]['Title']
         d['U' + str(i + 1)] = m.iloc[i]['CourseURL']
+        d['V'+str(i+1)]='visible'
         if(len(m.iloc[i]['Description'])>400):
             d['D' + str(i + 1)] = m.iloc[i]['Description'][:400]+'...'
         else:
@@ -105,7 +109,7 @@ def discover1(request,lang):
         d['T' + str(i + 1)] = ''
         d['U' + str(i + 1)] = ''
         d['D' + str(i + 1)] = ''
-        d['x']=x
+        d['V' + str(i + 1)] = 'hidden'
     return render(request,"discover.html",d)
 def about_us(request):
     return render(request,"about us.html",{'x':x})

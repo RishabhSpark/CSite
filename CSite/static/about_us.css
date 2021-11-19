@@ -34,21 +34,8 @@ body {
 /*#1{*/
 /*    visibility:hidden;*/
 /*}*/
-div.a1{
-    visibility: visible;
-}
-div.a2{
-    visibility: visible;
-}
-div.a3{
-    visibility: visible;
-}
-div.a4{
-    visibility: visible;
-}
-div.a5{
-    visibility: visible;
-}
-div.a6{
-    visibility: hidden;
+.about-us-content div{
+    height: 50px;
+  padding: 50px;
+  margin: 20px;
 }
