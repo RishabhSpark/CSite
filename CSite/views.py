@@ -27,8 +27,8 @@ config={
   "measurementId": "G-6DJF6MXXHX",
 "databaseURL":"https://fir-tutorial-19f11-default-rtdb.firebaseio.com/",
 }
-df=pd.read_excel('C:\\Users\\Lenovo\\PycharmProjects\\djangoProject\\CSite\\templates\\Book1.xlsx')
-df1=pd.read_excel('C:\\Users\\Lenovo\\PycharmProjects\\djangoProject\\CSite\\templates\\Book2.xlsx')
+df=pd.read_excel('C:\\Users\\Harshvardhan Aditya\\Desktop\\CSITE\\CSite1\\CSite\\templates\\Book1.xlsx')
+df1=pd.read_excel('C:\\Users\\Harshvardhan Aditya\\Desktop\\CSITE\\CSite1\\CSite\\templates\\Book2.xlsx')
 firebase=pyrebase.initialize_app(config)
 db=firebase.database()
 # data={"user":{"email":"","username":"","Ongoing":"","Completed":""}}
